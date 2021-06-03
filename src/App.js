@@ -6,20 +6,20 @@ import Content from './Content'
 
 
 function App() {
-  
+
   return (
     <Router>
-    <div className="App">
-      <switch>
-        <Route exact path="/">
-          <Project />
-        </Route>
-        <Route path="/content/:id">
-          <Content />
-        </Route>
-      </switch>
-    </div>
-  </Router> 
+      <div className="App">
+        <switch>
+          <Route exact path="/">
+            <Project />
+          </Route>
+          <Route path="/content/:id">
+            <Content />
+          </Route>
+        </switch>
+      </div>
+    </Router>
   );
 }
 export default App;
