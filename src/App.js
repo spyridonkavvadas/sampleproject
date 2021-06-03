@@ -5,7 +5,6 @@ import Project from './Project';
 import Content from './Content'
 
 
-
 function App() {
   
   return (
