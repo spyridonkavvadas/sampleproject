@@ -44,11 +44,15 @@ function Content() {
                         {pages.map(page => (
                             //  COL has a size 0f 6
                             <div className="col">
+
                                 <div className="card col-md-12 text-left mt-4" style={{ width: "43rem" }}>
                                     <div className="card-body">
                                         <h5 className="card-title">{page.title}</h5>
                                         <h6 className="card-subtitle mb-2 text-muted">{page.headline}</h6>
                                         <p className="card-text">{page.body}</p>
+
+                                        <hr />
+
                                         <a className="card-link">PROJECT STRUCTURE</a>
 
                                         {page.children.childrens.map(child => (
@@ -58,19 +62,22 @@ function Content() {
 
                                         ))}
 
+                                        <hr />
                                         {
                                             page.children.childrens.map(child => (
                                                 <div>
                                                     <span><strong>{child.name}</strong></span><br />
 
                                                     <div dangerouslySetInnerHTML={creatInnerHtml(child)}></div><br />
+                                                    <hr />
                                                     {/* <a href={child.pageUrl} /> */}
 
                                                 </div>
-
+                                             
                                             ))}
-
+                                        
                                         <h5 className="card-title">{page.childrens}</h5>
+                                      
                                         {/* <a href="#" className="card-link">Go To Project</a> */}
                                     </div>
                                 </div>
@@ -81,8 +88,14 @@ function Content() {
                         {/* ROW */}
                     </div>
 
-                    <div className="col">
+                    
 
+                    <div className="row">
+                        <div className="col">
+                                
+                            
+
+                        </div>                             
                     </div>
                 </div>
 
