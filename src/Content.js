@@ -54,7 +54,7 @@ function Content() {
                                         <hr />
 
                                         <a className="card-link">PROJECT STRUCTURE</a>
-
+                                        
                                         {page.children.childrens.map(child => (
                                             <div>
                                                 <label>{child.name}</label><br />
@@ -63,20 +63,49 @@ function Content() {
                                         ))}
 
                                         <hr />
+                                        
+
+
+
+
+
+                                        <div class="row">
                                         {
                                             page.children.childrens.map(child => (
-                                                <div>
+                                                <div key={page.id} className="card text-left mt-4" style={{ width: "100%" }}>
+                                                <>
+                                                   <div class="col-md-8 how-img">
+
                                                     <span><strong>{child.name}</strong></span><br />
+                                                  
+                                                   <div>
+                                                    {child.body}
+                                                    </div> 
 
-                                                    <div dangerouslySetInnerHTML={creatInnerHtml(child)}></div><br />
-                                                    <hr />
-                                                    {/* <a href={child.pageUrl} /> */}
-
-                                                </div>
-                                             
+                                                   
+                                                  
+                                                   </div> 
+                                                   
+                                                   <div class="col-md-4">     
+                                                   {
+                                                       child.images.map(im =>  
+                                                                                                           
+                                                        <img class="img-fluid" src={im.image} alt="img" width="360px"></img> 
+                                                       
+                                                        )
+                                                   }
+                                                   </div>    
+                                                   
+                                              </>
+                                            </div>
                                             ))}
-                                        
+                                             
+                                     </div>
+                                            
                                         <h5 className="card-title">{page.childrens}</h5>
+                                      
+
+
                                       
                                         {/* <a href="#" className="card-link">Go To Project</a> */}
                                     </div>
@@ -88,15 +117,8 @@ function Content() {
                         {/* ROW */}
                     </div>
 
-                    
+              
 
-                    <div className="row">
-                        <div className="col">
-                                
-                            
-
-                        </div>                             
-                    </div>
                 </div>
 
 
@@ -108,6 +130,6 @@ function Content() {
 // Clear the body text of the Content from the image link
 // Geting the image adress
 function creatInnerHtml(e) {
-    return { __html: e.body.replaceAll("src=\"", "src=\"https://localhost") };
+    return { __html: e.body.replaceAll("<p>", " ") };
 }
 export default Content;
