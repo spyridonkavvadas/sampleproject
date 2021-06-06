@@ -4,8 +4,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import './Content.css';
 import { useParams } from "react-router";
-//import ReactHtmlParser from 'react-html-parser';
-//import { Button } from 'react-bootstrap';
+
 
 // Variables
 let title = <h1>Content</h1>;
@@ -43,18 +42,18 @@ function Content() {
 
                         {pages.map(page => (
                             //  COL has a size 0f 6
-                            <div className="col">
+                            <div className="col-md-12">
 
-                                <div className="card col-md-12 text-left mt-4" style={{ width: "43rem" }}>
+                                <div className="card col-md-12 text-left mt-4 p-2">
                                     <div className="card-body">
                                         <h5 className="card-title">{page.title}</h5>
-                                        <h6 className="card-subtitle mb-2 text-muted">{page.headline}</h6>
+                                        <h6 className="card-subtitle text-muted">{page.headline}</h6>
                                         <p className="card-text">{page.body}</p>
 
                                         <hr />
 
                                         <a className="card-link">PROJECT STRUCTURE</a>
-                                        
+
                                         {page.children.childrens.map(child => (
                                             <div>
                                                 <label>{child.name}</label><br />
@@ -62,74 +61,63 @@ function Content() {
 
                                         ))}
 
-                                        <hr />
-                                        
-
-
-
-
-
-                                        <div class="row">
-                                        {
-                                            page.children.childrens.map(child => (
-                                                <div key={page.id} className="card text-left mt-4" style={{ width: "100%" }}>
-                                                <>
-                                                   <div class="col-md-8 how-img">
-
-                                                    <span><strong>{child.name}</strong></span><br />
-                                                  
-                                                   <div>
-                                                    {child.body}
-                                                    </div> 
-
-                                                   
-                                                  
-                                                   </div> 
-                                                   
-                                                   <div class="col-md-4">     
-                                                   {
-                                                       child.images.map(im =>  
-                                                                                                           
-                                                        <img class="img-fluid" src={im.image} alt="img" width="360px"></img> 
-                                                       
-                                                        )
-                                                   }
-                                                   </div>    
-                                                   
-                                              </>
-                                            </div>
-                                            ))}
-                                             
-                                     </div>
-                                            
-                                        <h5 className="card-title">{page.childrens}</h5>
-                                      
-
-
-                                      
-                                        {/* <a href="#" className="card-link">Go To Project</a> */}
                                     </div>
+
                                 </div>
+
+                                {
+                                    page.children.childrens.map(child => (
+                                        <div key={page.id} className="card col-md-12 text-left mt-4 p-4" style={{ width: "100%" }}>
+                                            <>
+                                                <div className="row">
+                                                    <div class="col-md-8">
+
+                                                        <span><strong>{child.name}</strong></span><br />
+
+                                                        <div>
+                                                           {child.body.replaceAll('<p>', '')}
+                                                          
+                                                        </div>
+
+                                                    </div>
+
+                                                    <div class="col-md-4">
+                                                        {
+                                                            child.images.map(im =>
+
+                                                                <img class="img-fluid m-2" src={im.image} alt="img" width="360px"></img>
+
+                                                            )
+                                                        }
+                                                    </div>
+                                                </div>
+                                            </>
+                                        </div>
+                                    ))}
+
+                                {/* end of card */}
                             </div>
-                            //  COL
+                            //  end of COL 1
 
                         ))}
-                        {/* ROW */}
-                    </div>
+                        {/* end of pages function */}
 
-              
+                    </div>
+                    {/* end of ROW 1 */}
+
 
                 </div>
-
+                {/* end of container */}
 
             </div>
         </>
     ) : ('Loading...');
 }
 
-// Clear the body text of the Content from the image link
-// Geting the image adress
+// Clear the body text of the Content from the <p> and </p> tags
 function creatInnerHtml(e) {
-    return { __html: e.body.replaceAll("<p>", " ") };
+    return { __html: e.body.replaceAll('<p>', '') };
 }
+
+
 export default Content;
