@@ -56,7 +56,7 @@ function Content() {
 
                                         {page.children.childrens.map(child => (
                                             <div>
-                                                <label>{child.name}</label><br />
+                                                <label>{child.name.charAt(0).toUpperCase()+child.name.slice(1)}</label><br />
                                             </div>
 
                                         ))}
@@ -72,7 +72,7 @@ function Content() {
                                                 <div className="row">
                                                     <div class="col-md-8">
 
-                                                        <span><strong>{child.name}</strong></span><br />
+                                                        <span><strong>{child.name.charAt(0).toUpperCase()+child.name.slice(1)}</strong></span><br />
 
                                                         <div>
                                                            {child.body.replaceAll('<p>', '')}
