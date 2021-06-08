@@ -52,7 +52,7 @@ function Content() {
 
                                         <hr />
 
-                                        <a className="card-link">PROJECT STRUCTURE</a>
+                                        <h6 className="card-link">PROJECT STRUCTURE</h6>
 
                                         {page.children.childrens.map(child => (
                                             <div>
