@@ -8,7 +8,7 @@ import Content from './Content'
 function App() {
 
   return (
-    <Router>
+    <Router basename='/sampleproject'>
       <div className="App">
         <Switch>
           <Route exact path="/">
