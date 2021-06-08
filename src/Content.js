@@ -10,7 +10,7 @@ import { useParams } from "react-router";
 let title = <h1>Content</h1>;
 
 
-const url = 'https://localhost/sampleprojektcreate3d/api/page/';
+const url = 'https://sampleprojektcreate3d.000webhostapp.com/sampleprojektcreate3d/api/page/';
 
 
 function Content() {

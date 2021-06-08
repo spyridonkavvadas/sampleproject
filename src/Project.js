@@ -8,7 +8,7 @@ import './Content.js'
 let title = <h1>Overview</h1>;
 
 
-const url = 'https://localhost/sampleprojektcreate3d/api/pages';
+const url = 'https://sampleprojektcreate3d.000webhostapp.com/sampleprojektcreate3d/api/pages';
 
 
 function Project() {
@@ -20,8 +20,8 @@ function Project() {
             .then(response => {
                 setPages(response.data.pages);
             })
-            .catch(err => console.log(err));
-        // .then(json => console.log(json))  
+            .catch(err => console.log(err))
+            .then(json => console.log(json));  
     }, []);
 
     // console.log(pages);
