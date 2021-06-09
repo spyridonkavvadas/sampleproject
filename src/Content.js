@@ -27,7 +27,7 @@ function Content() {
             })
             .catch(err => console.log(err));
         // .then(json => console.log(json))  
-    }, []);
+    }, [id]);
 
     console.log(pages);
 
@@ -115,9 +115,9 @@ function Content() {
 }
 
 // Clear the body text of the Content from the <p> and </p> tags
-function creatInnerHtml(e) {
-    return { __html: e.body.replaceAll('<p>', '') };
-}
+// function creatInnerHtml(e) {
+//     return { __html: e.body.replaceAll('<p>', '') };
+// }
 
 
 export default Content;
