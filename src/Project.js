@@ -43,7 +43,7 @@ function Project() {
                                         <h6 className="card-subtitle mb-2 text-muted">{page.headline}</h6>
                                         <a href={" "} className="card-link">Amount of Content: {page.childCount}</a>
 
-                                        <a href={"Content/" + page.id} className="card-link">Go To Project</a>
+                                        <a href={"content/" + page.id} className="card-link">Go To Project</a>
                                         
                                     </div>
                                 </div>
