@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import './Project.css';
 import './Content.js'
+//import { Card } from 'react-bootstrap';
 
 // Variables
 let title = <h1>Overview</h1>;
@@ -41,10 +42,12 @@ function Project() {
                                     <div className="card-body">
                                         <h4 className="card-title">{page.title}</h4>
                                         <h6 className="card-subtitle mb-2 text-muted">{page.headline}</h6>
-                                        <a href={" "} className="card-link">Amount of Content: {page.childCount}</a>
-
-                                        <a href={"content/" + page.id} className="card-link">Go To Project</a>
                                         
+                                            <div className='row content-info'>
+                                                <div className='col-md-7'>Content Amount: {page.childCount}</div>
+                                                <div className='col-md-5 text-right'><a href={"content/" + page.id} className="card-link">Go To Project</a></div>
+                                            </div>
+
                                     </div>
                                 </div>
 
