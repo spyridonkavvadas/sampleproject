@@ -75,7 +75,7 @@ function Content() {
                                                         <span><strong>{child.name.charAt(0).toUpperCase()+child.name.slice(1)}</strong></span><br />
 
                                                         <div>
-                                                           {child.body.replaceAll('<p>', '')}
+                                                           {child.body.replaceAll('<p>', '').replaceAll('</p>', '')}
                                                           
                                                         </div>
 
