@@ -41,10 +41,10 @@ function Project() {
                                     <div className="card-body">
                                         <h4 className="card-title">{page.title}</h4>
                                         <h6 className="card-subtitle mb-2 text-muted">{page.headline}</h6>
-                                        <h6 className="card-link">Amount of Content: {page.childCount}</h6>
+                                        <a href={" "} className="card-link">Amount of Content: {page.childCount}</a>
 
                                         <a href={"Content/" + page.id} className="card-link">Go To Project</a>
-
+                                        
                                     </div>
                                 </div>
 
